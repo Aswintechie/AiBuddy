@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "{{REPLACE_WITH_GUID}}",
+  "packageName": "com.aswintechie.aibuddy",
+  "developer": {
+    "name": "Aswin",
+    "websiteUrl": "https://github.com/Aswintechie/aibuddy",
+    "privacyUrl": "https://aswintechie.github.io/AiBuddy/privacy",
+    "termsOfUseUrl": "https://aswintechie.github.io/AiBuddy/support"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "AiBuddy",
+    "full": "AiBuddy - AI Assistant"
+  },
+  "description": {
+    "short": "AI assistant powered by Llama 3 in Teams",
+    "full": "AiBuddy brings AI-powered conversations to Microsoft Teams. Ask questions, get help with writing, brainstorm ideas, and more."
+  },
+  "accentColor": "#6264A7",
+  "bots": [
+    {
+      "botId": "{{REPLACE_WITH_BOT_ID}}",
+      "scopes": ["personal", "team", "groupchat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal", "team", "groupchat"],
+          "commands": [
+            {
+              "title": "help",
+              "description": "Show available commands"
+            },
+            {
+              "title": "about",
+              "description": "Information about AiBuddy"
+            },
+            {
+              "title": "clear",
+              "description": "Clear conversation history"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["*.koyeb.app", "aswintechie.github.io"]
+}
