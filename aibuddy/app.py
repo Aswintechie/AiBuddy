@@ -119,7 +119,7 @@ async def messages(req: Request) -> Response:
         response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
         if response:
             return json_response(data=response.body, status=response.status)
-        return Response(status=201)
+        return Response(status=204)
     except Exception as exc:  # pylint: disable=broad-except
         logger.error("Error processing activity: %s", exc, exc_info=True)
         return Response(status=500, text="Internal Server Error")
